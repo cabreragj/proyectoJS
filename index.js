@@ -87,10 +87,6 @@ const tipoPago = (total) => {
   alert("Muchas gracias, Saludos")
 }
 
-const cantidad = (cant, precio) => {
-  return cant * precio
-}
-
 const calcularTotal = (carrito) => {
   let total = 0;
   console.log(carrito)
