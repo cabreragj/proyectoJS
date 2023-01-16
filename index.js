@@ -59,6 +59,7 @@ function compra() {
       productos = Number(prompt("1 - "+prod1.tipo+" "+prod1.nombre+" $"+prod1.precio+"\n 2 - "+prod2.tipo+" "+prod2.nombre+" $"+prod2.precio+"\n 3 - "+prod3.tipo+" "+prod3.nombre+" $"+prod3.precio+"\n 4 - "+prod1.tipo+" "+prod4.nombre+" $"+prod4.precio+ "\n -1 - Eliminar producto \n 0 - Salir"))
     }   
     let p="";
+    // Utilice una variable indice, ya que en el caso que halla productos duplicados el IndexOf no daria los indices correctos
     carrito.forEach(producto=> {
     p= p + "\n" + indice + "- " + producto.tipo + " " + producto.nombre + " $" + producto.precio 
     indice++;
