@@ -26,7 +26,7 @@ function cargaCarrito() {
    `;
       containerProdCarrito.append(div);
       actualizarBotonesEliminar();
-      
+
     }
     )
     sumarValorTotal();
@@ -53,7 +53,7 @@ function eliminarProdCarrito(e) {
 }
 
 
-btnvaciar.addEventListener('click',vaciarElcarrito);
+btnvaciar.addEventListener('click', vaciarElcarrito);
 
 function vaciarElcarrito() {
   carritoProductos.length = 0;
@@ -62,15 +62,15 @@ function vaciarElcarrito() {
 }
 
 function sumarValorTotal() {
-const precioTotal= carritoProductos.reduce((total, producto) => total + (producto.cantidad * producto.precio) , 0);
+  const precioTotal = carritoProductos.reduce((total, producto) => total + (producto.cantidad * producto.precio), 0);
 
   const div = document.createElement('div');
-      div.classList.add('total')
-      div.innerHTML =
-        `
+  div.classList.add('total')
+  div.innerHTML =
+    `
           <p class="card-total"> Total: ${precioTotal}</p>
    `;
-   containerProdCarrito.append(div);
+  containerProdCarrito.append(div);
 
 }
 
