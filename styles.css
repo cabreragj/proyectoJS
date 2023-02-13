@@ -29,12 +29,19 @@
   padding: 3rem;
 
 }
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .container {
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
   padding: 1rem;
+  max-width: 1400px;
 }
 
 .main__h2 {
@@ -89,7 +96,7 @@
   color: #c3c7ce;
   border: none;
   border-radius: 8px;
-  width: 240px;
+  width: 200px;
   height: 45px;
   transition: .3s;
   margin-top: 10px;
@@ -108,7 +115,7 @@
   color: #c3c7ce;
   border: none;
   border-radius: 8px;
-  width: 240px;
+  width: 200px;
   height: 45px;
   transition: .3s;
   margin-top: 10px;
@@ -127,7 +134,7 @@
   color: #c3c7ce;
   border: none;
   border-radius: 8px;
-  width: 240px;
+  width: 200px;
   height: 45px;
   transition: .3s;
   margin-top: 10px;

@@ -1,11 +1,10 @@
 let carritoProductos = localStorage.getItem('contenido-carrito');
 carritoProductos = JSON.parse(carritoProductos);
-console.log(carritoProductos);
 const containerProdCarrito = document.querySelector("#container-carrito");
-
 const btnvaciar = document.querySelector('.btn-vaciar');
 const btnComprar = document.querySelector('.btn-comprar');
-
+btnvaciar.addEventListener('click', vaciarElcarrito);
+btnComprar.addEventListener('click', hacerCompra);
 
 function cargaCarrito() {
   containerProdCarrito.innerHTML = "";
@@ -20,7 +19,7 @@ function cargaCarrito() {
         <img class="card-img-carrito" alt="${producto.nombre}" src="${producto.img}">
         <div class="card-body-carrito">
           <h5 class="card-title-carrito">${producto.nombre}</h5>
-          <p class="card-text-carrito">${producto.tipo} ${producto.marca} Cantidad ${producto.cantidad} Precio Uni. $ ${producto.precio}</p>
+          <p class="card-text-carrito">${producto.tipo} ${producto.marca} - Cantidad:${producto.cantidad} | Precio Uni - $${producto.precio}</p>
         </div>
         <button class='eliminar-carrito' id='${producto.id}'>Eliminar</button>
    `;
@@ -32,8 +31,6 @@ function cargaCarrito() {
     sumarValorTotal();
   }
 }
-cargaCarrito();
-actualizarBotonesEliminar();
 
 function actualizarBotonesEliminar() {
   let btnEliminarProd = document.querySelectorAll('.eliminar-carrito');
@@ -52,9 +49,6 @@ function eliminarProdCarrito(e) {
   localStorage.setItem('contenido-carrito', JSON.stringify(carritoProductos));
 }
 
-
-btnvaciar.addEventListener('click', vaciarElcarrito);
-
 function vaciarElcarrito() {
   carritoProductos.length = 0;
   localStorage.setItem('contenido-carrito', JSON.stringify(carritoProductos));
@@ -71,13 +65,13 @@ function sumarValorTotal() {
           <p class="card-total"> Total: ${precioTotal}</p>
    `;
   containerProdCarrito.append(div);
-
 }
-
-btnComprar.addEventListener('click', hacerCompra);
 
 function hacerCompra() {
   carritoProductos.length = 0;
   localStorage.setItem('contenido-carrito', JSON.stringify(carritoProductos));
   cargaCarrito();
 }
+
+cargaCarrito();
+actualizarBotonesEliminar();
