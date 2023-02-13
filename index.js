@@ -50,6 +50,13 @@ function refrescarBtn() {
 }
 
 function agregarAlCarrito(e) {
+  Swal.fire({
+    position: 'top-center',
+    icon: 'success',
+    title: 'Agregaste un producto',
+    showConfirmButton: false,
+    timer: 1000
+  })
   const btnId = e.currentTarget.id;
   console.log(btnId)
   const prodsumado = productos.find(producto => producto.id === btnId);
