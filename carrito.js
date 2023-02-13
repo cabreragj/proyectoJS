@@ -89,6 +89,13 @@ function sumarValorTotal() {
 }
 
 function hacerCompra() {
+  Swal.fire({
+    position: 'top-center',
+    icon: 'success',
+    title: 'Gracias por tu compra !!',
+    showConfirmButton: false,
+    timer: 2500
+  })
   carritoProductos.length = 0;
   localStorage.setItem('contenido-carrito', JSON.stringify(carritoProductos));
   cargaCarrito();
